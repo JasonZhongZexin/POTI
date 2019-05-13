@@ -65,7 +65,7 @@ body{
     width:20%;
     background:orangered;
     color: white;
-    font-size: 2em
+    font-size: 1.3em
 }
 h1{
     margin:0;
@@ -100,7 +100,7 @@ h3{
     height: auto;
     font-family: "Times New Roman",Times,serif;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.3em;
     padding-left: 0.4em;
     padding-right: 0.4em;
     border-radius: 20px;
@@ -117,7 +117,7 @@ h3{
     height: auto;
     font-family: "Times New Roman",Times,serif;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.3em;
     padding-left: 0.4em;
     padding-right: 0.4em;
     border-radius: 20px;
@@ -159,4 +159,28 @@ h3{
   font-size: 18pt;
   display: none;
   padding: 10%;
+}
+#checkout{
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+}
+#checkout_container{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#delivery_detail{
+    margin: auto;
+}
+#delivery_detail tr{
+    font-size: 1.1em;
+}
+#delivery_detail td{
+    font-size: 1.1em;
+}
+.detail{
+    font-size: 1.1em;
 }
