@@ -68,7 +68,7 @@
     <?php
         $pid=$_GET[pid];
         if($pid==NULL){
-            echo "<h2>Choose the product from the categories on the left.</h2>";
+            echo "<div id=\"product_init\">Choose the product from the categories on the left.</div>";
         }else{
             require_once "db_settings.inc" ;
             $db = new mysqli(HOST,USER,PASS,DB);
