@@ -1,50 +1,36 @@
-/* .navTop{
-    background: #b20508;
-    color:white;
-    padding: 0%;
-    margin: 0%;
-    font-size: 1em;
-    position: fixed;
-    left: 0;
-    top: 4em;
-    z-index: 1;
-    display: inline;
-    text-align: center;
-} */
 body{
-    background: #dbdbdb;
+    background: #d8d6d698;
 }
 
 .left_hand_frame{
     padding: 0%;
     margin: 0%;
     font-size: 1em;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     left: 0;
     border: 0%;
-    background: red;
+    background: #00ffff;
     top: 0;
     width: 50%;
     height: 100%;
 }
-/* .right_frame{
-    background: #b20508;
+.right_frame{
     padding: 0%;
     margin: 0%;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 50%;
     height: 100%;
-} */
+}
 .top_right_hand_frame{
     padding: 0%;
     margin: 0%;
     position: absolute;
     right: 0;
     top: 0;
-    width: 50%;
+    width: 100%;
     height: 50%;
 }
 .bottom_right_hand_frame{
@@ -53,7 +39,7 @@ body{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 50%;
+    width: 100%;
     height: 50%;
 }
 #product_img{
@@ -69,7 +55,7 @@ body{
     /* background: orange; */
 }
 #p_att{
-    width: 50%;
+    width:100%;
     margin: 0 auto;
 }
 #add_button{
@@ -92,7 +78,7 @@ h3{
     padding: 0;
 }
 #product_ifo{
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
 }
 .menu{
@@ -103,7 +89,7 @@ h3{
     max-height: 100%;
     vertical-align: bottom;
 }
-#paurchaseBtn{
+#paurchaseBtn,#sub{
     background-color: rgb(34, 50, 194);
     color: #fff;
     width: auto;
@@ -116,7 +102,11 @@ h3{
     border-radius: 20px;
     outline: none;
 }
-#clear{
+#quantity{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#clear,#add{
     background-color: rgb(243, 48, 34);
     color: #fff;
     width: auto;
@@ -151,3 +141,6 @@ h3{
     border: 0%;
     background: #00ffff;
 }
+/* #menue_container::-webkit-scrollbar {
+    display: none;
+  } */
