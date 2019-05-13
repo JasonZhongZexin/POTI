@@ -1,4 +1,5 @@
 body{
+    background-color:transparent;
     background: #d8d6d698;
 }
 
@@ -32,6 +33,7 @@ body{
     top: 0;
     width: 100%;
     height: 50%;
+    background: #c28db6;
 }
 .bottom_right_hand_frame{
     padding: 0%;
@@ -80,6 +82,8 @@ h3{
 #product_ifo{
     width: 100%;
     margin: 0 auto;
+    padding-left: 10%;
+    padding-top: 2em;
 }
 .menu{
     border:0;
