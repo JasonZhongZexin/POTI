@@ -6,6 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="a1_stytle.css">
     <title>Grocery Store</title>
+    <style>
+    #product_ifo {
+        width:70%;
+        border-collapse: collapse;
+        background:#00ff80;
+    }
+  
+    #product_ifo, th,td {
+        border: 1px solid white;
+        /* padding-right: 2em; */
+        padding-top: 0.5em;
+        /* padding-left:1em; */
+        padding-bottom: 0.5em;
+    }
+    td{
+        padding-left:10%;
+    }
+    th{
+        background: black;
+        color: white;
+    }
+    </style>
 </head>
 <script>
     function changeQuantity(id){
@@ -58,7 +80,7 @@
                 echo "<table id=\"product_ifo\">
                     <input type=\"hidden\" name=\"product_name\" value=\"$product_name\"/>
                     <input type=\"hidden\" name=\"unit_quantity\" value=\"$unit_quantity\"/>
-                    <tr><td><h1>$product_name</h1><h3>($unit_quantity)<h3></td></tr>
+                    <tr><th><h1>$product_name</h1><h3>($unit_quantity)<h3></th></tr>
                     <input type=\"hidden\" name=\"product_price\" value=\"$product_price\"/>
                     <tr><td><h2>Price: $$product_price</h2></td></tr>
                     <tr><td><h2>Quantity Available:$product_stock</h2></td></tr>
