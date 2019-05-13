@@ -77,6 +77,9 @@
 <body>
 <div class = "left_hand_frame" >
     <div id = "menue_container" >
+    <div id = menue_cover>
+    <div><p>Unable to add product during the checkout process. Click the "Add more" button to continue add more products.</p></div>
+    </div>
         <div id = "menue_content">
             <h3 id = "title">Please select a category:</h3>
             <img src="./res/top_catalogue.png" alt="top catalogue" usemap="#topCatalogue" class = "menu"/>
