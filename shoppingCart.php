@@ -119,7 +119,7 @@
         <input type="button" id="clear" value = "Clear Cart" onclick="clearCart()"/>
         </form>
         <?php }else{
-            echo "<h2>Your shopping cart is empty. Please select and add an item to the cart.</h2>";
+            echo "<div id=\"empty_cart\">Nothing in shopping cart.<br> Select and add an item to the cart.</div>";
         }
     } ?>
     </body>
