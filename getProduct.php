@@ -40,11 +40,11 @@
         var current_quantity = parseInt(element_value,10);
         switch(id){
             case "add":
-            if(current_quantity<15){
+            if(current_quantity<20){
                 current_quantity++;
                 element.value = current_quantity;
             }else{
-                alert("The max order for each items is 15.");
+                alert("The maximum quantity for each product is 20 per order.");
             }
             break;
             case "sub":
@@ -53,6 +53,15 @@
             element.value = current_quantity;
             break;
         }
+    }
+    function checkQuantity(){
+        var quantity = document.getElementById("quantity");
+        if(quantity.value>20){
+        alert("The maximum quantity for each product is 20 per order.");
+        quantity.focus();
+        return false;
+        }
+        return true;
     }
 </script>
 <body>
@@ -76,7 +85,7 @@
                     $product_stock = $a_row['in_stock'];
                     $product_price = $a_row['unit_price'];
                 }
-                echo "<form method=\"POST\" action=\"shoppingCart.php\" target=\"shoppingCart_iframe\">";
+                echo "<form method=\"POST\" onsubmit=\"return checkQuantity();\" action=\"shoppingCart.php\" target=\"shoppingCart_iframe\">";
                 echo "<table id=\"product_ifo\">
                     <input type=\"hidden\" name=\"product_name\" value=\"$product_name\"/>
                     <input type=\"hidden\" name=\"unit_quantity\" value=\"$unit_quantity\"/>
@@ -86,8 +95,8 @@
                     <tr><td><h2>Quantity Available:$product_stock</h2></td></tr>
                     <tr><td>
                     <input type=\"button\" id=\"sub\" value=\"-\" onclick=\"changeQuantity(this.id)\"/>
-                    <input type=\"number\" name=\"quantity\" id=\"quantity\" value=\"1\" min =\"1\" max=\"15\"/>
-                    <input type=\"button\" id=\"add\" value=\"+\" onclick=\"changeQuantity(this.id)\"/>
+                    <input type=\"number\" name=\"quantity\" id=\"quantity\" value=\"1\" min =\"1\" max=\"100\" required/>
+                    <input type=\"button\" id=\"add\" value=\"+\" onclick=\"changeQuantity(this.id)\"/>(Max:20)
                     </td></tr>
                     <tr><td>
                     <input id=\"paurchaseBtn\" type=\"submit\" id=\"submit\" value=\"Add\"/>
