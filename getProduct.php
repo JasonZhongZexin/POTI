@@ -68,7 +68,7 @@
                     <input type=\"button\" id=\"add\" value=\"+\" onclick=\"changeQuantity(this.id)\"/>
                     </td></tr>
                     <tr><td>
-                    <input type=\"submit\" id=\"submit\" value=\"Add\"/>
+                    <input id=\"paurchaseBtn\" type=\"submit\" id=\"submit\" value=\"Add\"/>
                     </td></tr>
                     </table>";
                 echo "</form>";
