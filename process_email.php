@@ -7,6 +7,7 @@
 <html>
     <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="a1_stytle.css">
     </head>
     <body>
         <p>
@@ -62,7 +63,7 @@
         // }else{
         //     echo 'fail to send the email';
         // }
-        echo "<br> <h2>Thanks for shopping with us. Your order has been processed and a confirmation email has been send to $email<h2>";
+        echo "<br> <div id=\"order_email\">Thanks for shopping with us. <br>Your order has been processed and a confirmation email has been send to $email</div>";
     }
 ?>
 </p>
