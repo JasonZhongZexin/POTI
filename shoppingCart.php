@@ -33,7 +33,7 @@
         if($clear!=NULL && strcmp($clear,'true')==0){
             if(session_destroy()){
                 echo "<html><body><head></head>";
-                echo "<h2>All itmes have been removed.</h2><link rel=\"stylesheet\" type=\"text/css\" href=\"a1_stytle.css\">";
+                echo "<h2 id=\"empty_cart\">All items have been removed.</h2><link rel=\"stylesheet\" type=\"text/css\" href=\"a1_stytle.css\">";
                 flush();
             }
         }
