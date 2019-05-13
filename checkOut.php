@@ -32,6 +32,18 @@ function validateEmail(email)
     return re.test(email);
 }
 </script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(window.parent.document).find("#menue_cover").show();
+    });
+    function addMore(){
+        $(document).ready(function(){
+        $(window.parent.document).find("#menue_cover").hide();
+        });
+        window.location.href = "getProduct.php";
+    }
+</script>
 </head>
     <body>
        <?php
@@ -51,6 +63,7 @@ function validateEmail(email)
         <tr><td></td><td></td></tr>
     </table>
     <input type="submit" id="paurchaseBtn" name="purchase" value="Purchase"/>
+    <input type="button" id="continue_shop" name="continue_shop" onclick="addMore()" value="Add more"/>
         <?php
             $productds = $_SESSION['cart'];
             $sum = 0;
