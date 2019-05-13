@@ -126,6 +126,7 @@ function validateEmail(email)
 <?php
         }else{
             echo"<h1>Your shopping cart is current empty. Please add at least 1 items first.</h1>";
+            echo "<input type=\"button\" id=\"continue_shop\" name=\"continue_shop\" onclick=\"addMore()\" value=\"Add more\"/>";
         }
        ?>
        </div>
