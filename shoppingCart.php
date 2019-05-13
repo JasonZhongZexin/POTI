@@ -111,7 +111,7 @@
                 }
                 echo"</tr>";
             }
-            echo "<tr> <th></th><th></th><th>Total:</th><th>$sum</th></tr>";
+            echo "<tr> <th></th><th></th><th>Total</th><th>$$sum</th></tr>";
 ?>
             </table>
         </div>
