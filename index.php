@@ -81,7 +81,8 @@
     <div><p>Unable to add product during the checkout process. Click the "Add more" button to continue add more products.</p></div>
     </div>
         <div id = "menue_content">
-            <h3 id = "title">Please select a category:</h3>
+            <h3 id = "title">Welcome to POTI Grocery Store</h3>
+            <p id="sub_title">Please select an catalogue from the menu</p>
             <img src="./res/top_catalogue.png" alt="top catalogue" usemap="#topCatalogue" class = "menu"/>
             <img src="./res/fresh_food.png" id="fresh_food_sub" alt="top catalogue" usemap="#fresh_food_sub_map" class = "menu" style="display:none;"/>
             <img src="./res/frozen_food.png" id="frozen_food_sub" alt="top catalogue" usemap="#frozen_food_sub_map" class = "menu" style="display:none"/>
