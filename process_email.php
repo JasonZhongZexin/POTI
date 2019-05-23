@@ -2,7 +2,6 @@
     session_start();
     ini_set("display_errors","On");
     error_reporting(E_ALL);
-    session_destroy();
 ?>
 <html>
     <head>
@@ -14,55 +13,68 @@
         <?php
         $first_name=$_REQUEST['first_name'];
         $email=$_REQUEST['email'];
-
-    function send_email($toEmail,$first_name)
-    {
-    // require_once('./PHPMailer-5.2.27/class.phpmailer.php');
-    // require_once('./PHPMailer-5.2.27/class.smtp.php');
-    // $mail = new PHPMailer();
-    // $mail->IsSMTP(); 
-    // $mail->Host = "smtp.gmail.com";            //smtp host
-    // $mail->Port = 465;                        //email port 
-    // $mail->SMTPAuth   = true;                //allow smtp
-    // $mail->CharSet  = "UTF-8";               //encoding format
-    // $mail->Encoding = "base64";              //encoding format
-    // $mail->IsHTML(true);                     //support html
- 
-     
-    // $mail->Username = "";      //email username
-    // $mail->Password = "";      //email password
-    // $mail->From     = "";      //from
-    // $mail->SMTPSecure = 'ssl'; 
-     
-    // $mail->FromName = "POIT GROCERY STORE";             //from
-    // $mail->AddAddress($toEmail);             //to
- 
-    // email subject
-    $subject = 'NEW ORDER INFO'; 
-    // $mail->Subject = $subject; 
- 
-    // email content
-    $content = "Dear " . $first_name . ", <br>Thanks for shopping with us. Your order has been processed. Here is the detail of your order.<br>";
-    // $mail->Body = $content;
-    $headers = "POIT GROCERY STORE";
-    mail($toEmail,$subject,$content,$headers);
- 
-    //send eamil
-    // if(!$mail->Send()) {
-    //       return false;
-    // }else{
-    //       return true;
-    // }
-    }
-
+        $subject = "NEW ORDER INFO"; 
+        $from = "zexin.zhong-1@student.uts.edu.au";
+        $content = "Dear " . $first_name .",<br><br>Thanks for shopping with us. Your order has been processed. Here is the detail of your order.<br>";
+        if(isset($_SESSION['cart'])){ 
+            $content .= "<table id=\"product_detail\">";  
+            $content .=  "<tr><th>Product Name</th><th>Price</th><th>Quantity</th><th>Total cost</th></tr>";
+            $productds = $_SESSION['cart'];
+            $sum = 0;
+            foreach($productds as $product){
+                $product_name = $product['product_name'];
+                $quantity = $product['quantity'];
+                $price = $product['price'];
+                $cost = $quantity*$price;
+                $sum += $cost;
+                $content .=  "<tr><td>$product_name</td><td>$price</td><td>$quantity</td><td>$cost</td></tr>";
+            }
+            $content .=  "<tr><th></th><th></th><th>Total cost</th><th>$sum</th></tr>";
+            $content .= "</table>";
+            $content .="<style>";
+            $content .= "#product_detail {";
+            $content .= "width:auto;";
+            $content .= "border-collapse: collapse;";
+            $content .= "background: #095dca;";
+            $content .= "color: white;";
+            $content .= "margin:auto;";
+            $content .= "}";
+  
+            $content .= "/* #product_detail th td {";
+            $content .= "border: 3px solid white;";
+            $content .= "text-align: center;";
+            $content .= "} */";
+            $content .= "#product_detail th{";
+            $content .= "border: 3px solid white;";
+            $content .= "background: black;";
+            $content .= "font-size:1em;";
+            $content .= "text-align: center;";
+            $content .= "color: white;";
+            $content .= "padding-left: 1em;";
+            $content .= "padding-right: 1em;";
+            $content .= "padding-top:0.3em;";
+            $content .= "padding-bottom:0.3em;";
+            $content .= "}";
+            $content .= "#product_detail td{";
+            $content .= "border: 3px solid white;";
+            $content .= "font-size:1em;";
+            $content .= "padding-left: 1em;";
+            $content .= "padding-right: 1em;";
+            $content .= "padding-top:0.3em;";
+            $content .= "padding-bottom:0.3em;";
+            $content .= "}";
+            $content .= "#product_detail tr:nth-child(2n){";
+            $content .= "background:#00CCCC;";
+            $content .= "}";
+            $content .= "</style>";
+            $content .="<br><br>Regards,<br>POTI Grocery Shop";
+        }
+        
+        session_destroy();
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     if(($first_name!=NULL||$first_name!="")&& ($email!=NULL||$email!="")){
-        // sendEmail($email,$first_name);
-        send_email($email, $first_name);
-        // if($status){
-        //     echo 'email has sent';
-        // }else{
-        //     echo 'fail to send the email';
-        // }
+        mail($email,$subject,$content,$headers);
         echo "<br> <div id=\"order_email\">Thanks for shopping with us. <br>Your order has been processed and a confirmation email has been send to $email</div>";
     }
 ?>
