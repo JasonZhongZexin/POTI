@@ -1,1 +1,1 @@
-# POTI_Assignment1
+# POTI G-store web 
